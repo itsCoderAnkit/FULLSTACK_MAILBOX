@@ -4,9 +4,12 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import styles from './SignUp.module.css'
 import { useRef } from 'react';
+import { useHistory } from 'react-router-dom';
 
 
 function SignUp() {
+
+  const history = useHistory()
 
     const signUpEmail = useRef<HTMLInputElement>(null)
     const signUpPassword = useRef<HTMLInputElement>(null)
@@ -41,9 +44,13 @@ function SignUp() {
             const ErrorMessage:string = data
             throw new Error(ErrorMessage)
         }
+
+
         else if(response.status ===201){
           const data = await response.json()
           console.log(data)
+          history.push('/login')
+          
         }
         }
         catch(err){

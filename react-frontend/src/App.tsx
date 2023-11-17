@@ -4,7 +4,10 @@ import './App.css';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import SignUp from './Components/Pages/SignUp';
+import Login from './Components/Pages/Login';
+
 import { Route, Switch } from 'react-router-dom';
+import Welcome from './Components/Pages/Welcome';
 
 function App() {
   return (
@@ -13,6 +16,12 @@ function App() {
       <Switch>
         <Route path='/signup'>
           <SignUp />
+        </Route>
+        <Route path='/login'>
+          <Login />
+        </Route>
+        <Route path='/welcome'>
+          <Welcome />
         </Route>
       </Switch>
 

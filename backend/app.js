@@ -15,7 +15,7 @@ app.use(user)
 
 app.use((req,res,next)=>{console.log("IN MIDDLEWARE")})
 
-sequelizeApps.sync({force:true}).then(result =>{
+sequelizeApps.sync().then(result =>{
     //console.log(result)
     console.log("SERVER STARTED")
     app.listen(8000)
