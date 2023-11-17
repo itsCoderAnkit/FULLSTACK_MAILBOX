@@ -1,0 +1,21 @@
+.container{
+    margin: 60px auto;
+    border: 2px solid #e16262;
+    border-radius: 40px;
+}
+
+.container h1{
+    text-align: center;
+    color: #e16262;
+}
+
+.container label{
+    color: #e16262;   
+}
+
+.container button{
+    margin: 10px 513px;
+    background-color: #e16262;
+    color: white;
+    border-color: rgb(233, 67, 67);
+}
