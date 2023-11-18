@@ -8,6 +8,7 @@ import Login from './Components/Pages/Login';
 
 import { Route, Switch } from 'react-router-dom';
 import Welcome from './Components/Pages/Welcome';
+import ComposeMail from './Components/Pages/ComposeMail';
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
         </Route>
         <Route path='/welcome'>
           <Welcome />
+        </Route>
+        <Route path='/compose-mail'>
+          <ComposeMail />
         </Route>
       </Switch>
 
