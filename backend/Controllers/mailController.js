@@ -55,6 +55,22 @@ exports.getSentMails = async(req,res,next)=>{
     }
 }
 
+exports.viewMail = async(req,res,next)=>{
+    try{
+        console.log("view mail >>",req.params.id)
+
+        const viewMail = await sentMail.findOne({where:{id:req.params.id}})
+        console.log(viewMail)
+
+        const updateSeen = await sentMail.update({seen:true},{where:{id:req.params.id}})
+
+        res.status(200).json({success:true,message:"Found One Mail",data:viewMail})
+    }
+    catch(err){
+        console.log(err)
+        res.status(400).json({success:true,message:"unable to get mail"})
+    }
+}
 
 exports.deleteInboxMail = async (req,res,next)=>{
 
@@ -71,8 +87,5 @@ exports.deleteInboxMail = async (req,res,next)=>{
         console.log(err)
         res.status(400).json({success:false,message:"INBOX MAIL NOT DELETED"})
     }
-
-    
-
 
 }

@@ -24,6 +24,10 @@ const SentMails = sequelize.define('sent_mails',{
     content:{
         type:Sequelize.STRING,
         allowNull:true
+    },
+    seen:{
+        type:Sequelize.BOOLEAN,
+        defaultValue: false
     }
 })
 

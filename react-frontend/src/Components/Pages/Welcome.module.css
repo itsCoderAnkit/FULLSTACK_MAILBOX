@@ -10,3 +10,11 @@
     justify-content: space-between; /* Add space between items */
     align-items: center
 }
+
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #2d4cea;
+    border-radius: 50%;
+    display: inline-block;
+  }
