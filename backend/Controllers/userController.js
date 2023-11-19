@@ -8,7 +8,7 @@ dotenv.config()
 exports.postUserSignUp = async (req, res, next) => {
     try {
         console.log('in postusersignup')
-        console.log(req.body)
+        //console.log(req.body)
         const emailUser = req.body.email;
         const passwordUser = req.body.password;
         const confirmPasswordUser = req.body.confirmPassword;
@@ -18,16 +18,16 @@ exports.postUserSignUp = async (req, res, next) => {
         }
         else {
             const existingUser = await UserDB.findAll({ where: { email: emailUser } })
-            console.log(">>", existingUser[0])
+            //console.log(">>", existingUser[0])
             if (existingUser[0]) {
                 return res.status(500).json("USER ALREADY EXIST")
             }
             else {
                 if (passwordUser === confirmPasswordUser) {
                     bcrypt.hash(passwordUser, 10, async (err, hash) => {
-                        console.log(err, hash)
+                        //console.log(err, hash)
                         const newUser = await UserDB.create({ email: emailUser, password: hash })
-                        console.log(newUser)
+                        //console.log(newUser)
                         return res.status(201).json("created account")
                     })
                 }
@@ -53,12 +53,12 @@ function generateAccessToken(id, email) {
 
 
 exports.postUserLogin = async (req, res, next) => {
-    console.log("LOGIN CONT..")
-    console.log(req.body)
+    //console.log("LOGIN CONT..")
+    //console.log(req.body)
 
     const existingUser = await UserDB.findAll({ where: { email: req.body.email } })
     try{
-        console.log(existingUser[0])
+        //console.log(existingUser[0])
     if (existingUser[0]) {
         const user = existingUser[0].dataValues
         bcrypt.compare( req.body.password, user.password, (err, result) => {

@@ -1,0 +1,12 @@
+.container{
+    margin: 95px auto;
+    border: 2px solid #e16262;
+    border-radius: 40px;
+}
+
+
+.div{
+    display: flex; /* Use flexbox to place items in the same line */
+    justify-content: space-between; /* Add space between items */
+    align-items: center
+}

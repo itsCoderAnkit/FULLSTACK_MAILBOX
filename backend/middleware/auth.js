@@ -7,16 +7,16 @@ dotenv.config()
 
 exports.authenticate = async (req,res,next)=>{
     try{
-        console.log("in middle", )
+        //console.log("in middle")
         const token = req.headers.authorization
-        console.log(token)
+        //console.log(token)
 
         const user = jwt.verify(token,process.env.JWT_SECRET_KEY)
-        console.log(user)
+        //console.log(user)
 
         const userVerify = await User.findByPk(user.userId)
 
-        console.log(userVerify)
+        //console.log(userVerify)
 
         if(userVerify){
             req.user = userVerify
