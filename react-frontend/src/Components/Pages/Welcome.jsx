@@ -194,7 +194,7 @@ function Welcome() {
         </Button>
       </div >
 
-      <div>
+      <div className={styles.div}>
         <Button variant="primary" type="submit" onClick={() => { setMailType('inbox') }}>
           Inbox {unSeen}
         </Button>
