@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Set the height of the container to full viewport height */
+  }
+  
+  .h1 {
+    font-size: 4rem; /* Adjust the font size as needed */
+    font-weight: bold;
+    color: #e74c3c; /* Set the color to your preference */
+    text-align: center;
+  }

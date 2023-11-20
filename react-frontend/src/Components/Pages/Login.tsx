@@ -5,10 +5,13 @@ import Form from 'react-bootstrap/Form';
 import styles from './Login.module.css'
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
+import { AuthActions } from '../../Store/AuthSlice';
+import { useDispatch } from 'react-redux';
 
 function Login() {
 
     const history = useHistory()
+    const dispatch = useDispatch()
     const inputLoginEmail = useRef<HTMLInputElement>(null)
     const inputLoginPassword = useRef<HTMLInputElement>(null)
 
@@ -31,11 +34,12 @@ function Login() {
 
             })
 
-            console.log(">>",response)
+            //console.log(">>",response)
             if(response.status===200){
                 const data = await response.json()
-                console.log(data)
+                console.log("log data",data)
                 localStorage.setItem('token',data.token)
+                dispatch(AuthActions.login({emailId:loginEmail, tokenId:data.token}))
                 history.push('/welcome')
             }
             else{

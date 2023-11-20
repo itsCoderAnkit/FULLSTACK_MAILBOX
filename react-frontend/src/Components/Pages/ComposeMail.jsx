@@ -70,9 +70,9 @@ function ComposeMail() {
                     setShowAlert(false)
                 },3000)
 
-                toUser.current.value = ""
-                subject.current.value = ""
-                setContentState("")
+                // toUser.current.value = ""
+                // subject.current.value = ""
+                // setContentState("")
             }
         }
         catch (err) {

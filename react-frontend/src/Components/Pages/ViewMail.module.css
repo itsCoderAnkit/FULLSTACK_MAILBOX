@@ -1,0 +1,53 @@
+.Container {
+    max-width: 600px;
+    margin: 120px auto;
+    padding: 20px;
+    background-color: #dedede;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+  }
+  
+  .Container p {
+    margin: 10px 0;
+  }
+  
+  .Container p:first-child {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .Container p:nth-child(2) {
+    font-size: 1.2em;
+    color: #484848;
+  }
+  
+  .Container p:nth-child(3) {
+    font-size: 1.1em;
+    color: #323232;
+  }
+  
+  .Container p:nth-child(n+4) {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .Container p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .Container a {
+    color: #4285f4;
+    text-decoration: none;
+  }
+  
+  .Container a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Optional: Add transitions for a smoother effect */
+  .Container p, .Container a {
+    transition: color 0.3s;
+  }
+  
